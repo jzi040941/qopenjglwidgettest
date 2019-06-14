@@ -63,22 +63,50 @@ Window::Window()
     setWindowTitle(tr("2D Painting on Native and OpenGL Widgets"));
 
     Widget *native = new Widget(&helper, this);
-    GLWidget *openGL = new GLWidget(&helper, this);
+    GLWidget *openGL1 = new GLWidget(&helper, this);
+    GLWidget *openGL2 = new GLWidget(&helper, this);
+    GLWidget *openGL3 = new GLWidget(&helper, this);
+    GLWidget *openGL4 = new GLWidget(&helper, this);
+    GLWidget *openGL5 = new GLWidget(&helper, this);
+    GLWidget *openGL6 = new GLWidget(&helper, this);
+    GLWidget *openGL7 = new GLWidget(&helper, this);
+    GLWidget *openGL8 = new GLWidget(&helper, this);
+    GLWidget *openGL9 = new GLWidget(&helper, this);
+    GLWidget *openGL10 = new GLWidget(&helper, this);
+    
     QLabel *nativeLabel = new QLabel(tr("Native"));
     nativeLabel->setAlignment(Qt::AlignHCenter);
     QLabel *openGLLabel = new QLabel(tr("OpenGL"));
     openGLLabel->setAlignment(Qt::AlignHCenter);
 
     QGridLayout *layout = new QGridLayout;
-    layout->addWidget(native, 0, 0);
-    layout->addWidget(openGL, 0, 1);
-    layout->addWidget(nativeLabel, 1, 0);
-    layout->addWidget(openGLLabel, 1, 1);
+    //layout->addWidget(native, 0, 0);
+    layout->addWidget(openGL1, 0, 0);
+    layout->addWidget(openGL2, 1, 0);
+    layout->addWidget(openGL3, 2, 0);
+    layout->addWidget(openGL4, 3, 0);
+    layout->addWidget(openGL5, 4, 0);
+    layout->addWidget(openGL6, 5, 0);
+    layout->addWidget(openGL7, 6, 0);
+    layout->addWidget(openGL8, 7, 0);
+    layout->addWidget(openGL9, 8, 0);
+    layout->addWidget(openGL10, 9, 0);
+    //layout->addWidget(nativeLabel, 1, 0);
+    //layout->addWidget(openGLLabel, 1, 1);
     setLayout(layout);
 
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, native, &Widget::animate);
-    connect(timer, &QTimer::timeout, openGL, &GLWidget::animate);
+    connect(timer, &QTimer::timeout, openGL1, &GLWidget::animate);
+    connect(timer, &QTimer::timeout, openGL2, &GLWidget::animate);
+    connect(timer, &QTimer::timeout, openGL3, &GLWidget::animate);
+    connect(timer, &QTimer::timeout, openGL4, &GLWidget::animate);
+    connect(timer, &QTimer::timeout, openGL5, &GLWidget::animate);
+    connect(timer, &QTimer::timeout, openGL6, &GLWidget::animate);
+    connect(timer, &QTimer::timeout, openGL7, &GLWidget::animate);
+    connect(timer, &QTimer::timeout, openGL8, &GLWidget::animate);
+    connect(timer, &QTimer::timeout, openGL9, &GLWidget::animate);
+    connect(timer, &QTimer::timeout, openGL10, &GLWidget::animate);
     timer->start(50);
 }
 //! [0]

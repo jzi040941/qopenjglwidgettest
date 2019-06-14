@@ -55,7 +55,7 @@
 #include <QTimer>
 
 #include "wobjectimpl.h"
-
+#include <iostream>
 W_OBJECT_IMPL(GLWidget)
 
 //! [0]
@@ -63,7 +63,7 @@ GLWidget::GLWidget(Helper *helper, QWidget *parent)
     : QOpenGLWidget(parent), helper(helper)
 {
     elapsed = 0;
-    setFixedSize(200, 200);
+    setFixedSize(1000, 50);
     setAutoFillBackground(false);
 }
 //! [0]
@@ -71,7 +71,8 @@ GLWidget::GLWidget(Helper *helper, QWidget *parent)
 //! [1]
 void GLWidget::animate()
 {
-    elapsed = (elapsed + qobject_cast<QTimer*>(sender())->interval()) % 1000;
+    elapsed = (elapsed + qobject_cast<QTimer*>(sender())->interval()/50) % 1000;
+    std::cout << elapsed << std::endl;
     update();
 }
 //! [1]

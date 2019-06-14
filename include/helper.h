@@ -55,7 +55,7 @@
 #include <QFont>
 #include <QPen>
 #include <QWidget>
-
+#include <QPixmap>
 //! [0]
 class Helper
 {
@@ -71,6 +71,7 @@ private:
     QFont textFont;
     QPen circlePen;
     QPen textPen;
+    QPixmap backgroundPixmap;
 };
 //! [0]
 
